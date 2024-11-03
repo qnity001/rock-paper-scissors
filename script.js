@@ -1,6 +1,5 @@
 let humanScore = 0;
 let computerScore = 0;
-let humanSelection = "";
 let computerSelection = getComputerChoice();
 
 const rock = document.querySelector(".rock");
@@ -45,26 +44,10 @@ function getComputerChoice()
     }
 }
 
-function getHumanChoice()
-{
-    const choice = (prompt("Enter your choice.")).toLowerCase();
-    if (choice == "rock" || choice == "paper" || choice == "scissors") {
-        return choice;
-    }
-
-    // Error handling
-    else {
-        return "INVALID INPUT";
-    }
-}
 
 // Play one round and get output
 function playRound(human, computer)
 {
-    if (human === "INVALID INPUT") {
-        console.log("Invalid input, game forfeit");
-        return;
-    }
     
     console.log("You played " + human);
     console.log("Computer played " + computer);
