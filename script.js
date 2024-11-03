@@ -8,12 +8,9 @@ displayResult();
 
 function playGame()
 {
-    for (let i = 1; i <= 5; i++) {
-        console.log("Round " + i);
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
 }
 
 function displayResult() 
@@ -48,6 +45,7 @@ function getHumanChoice()
     return (prompt("Enter your choice.")).toLowerCase();
 }
 
+// Play one round and get output
 function playRound(human, computer)
 {
     console.log("You played " + human);
