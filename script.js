@@ -59,7 +59,7 @@ function playRound(human, computer)
         console.log("Invalid input, game forfeit");
         return;
     }
-    else {
+    
     console.log("You played " + human);
     console.log("Computer played " + computer);
 
@@ -103,5 +103,5 @@ function playRound(human, computer)
     console.log("Your score: " + humanScore);
     console.log("Computer score: " + computerScore);
 }
-}
+
 
