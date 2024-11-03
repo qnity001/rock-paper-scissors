@@ -1,13 +1,21 @@
 let humanScore = 0;
 let computerScore = 0;
 let humanSelection = "";
-let computerSelection = "";
+let computerSelection = getComputerChoice();
 
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+const rock = document.querySelector(".rock");
+rock.addEventListener("click", () => {
+    playRound("rock", computerSelection);
+});
+
+const paper = document.querySelector(".paper");
+paper.addEventListener("click", () => {
+    playRound("paper", computerSelection);
+});
+
+const scissors = document.querySelector(".scissors");
+scissors.addEventListener("click", () => {
+    playRound("scissors", computerSelection);
 });
 
 function displayResult() 
