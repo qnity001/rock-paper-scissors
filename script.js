@@ -47,48 +47,67 @@ function getComputerChoice()
 // Play one round and get output
 function playRound(human, computer)
 {
-    console.log("You played " + human);
-    console.log("Computer played " + computer);
+    const result = document.querySelector(".result");
+
+    const humanChoice = document.createElement("div");
+    humanChoice.textContent = "You played " + human;
+    result.appendChild(humanChoice);
+
+    const compChoice = document.createElement("div");
+    compChoice.textContent = "Computer played " + computer;
+    result.appendChild(compChoice);
+
+    const roundResult = document.createElement("div");
 
     if (human === computer) {
-        console.log("It's a tie!");
+        roundResult.textContent = "It's a tie!";
     }
 
     else if (human === "rock") {
         if (computer === "paper") {
-            console.log("You lose! Paper beats Rock.");
+            roundResult.textContent = "You lose! Paper beats Rock.";
             computerScore += 1;
         }
         else {
-            console.log("You win! Rock beats Scissors.");
+            roundResult.textContent = "You win! Rock beats Scissors.";
             humanScore += 1;
         }
     }
 
     else if (human === "paper") {
         if (computer === "rock") {
-            console.log("You win! Paper beats Rock.");
+            roundResult.textContent = "You win! Paper beats Rock.";
             humanScore += 1;
         }
         else {
-            console.log("You lose. Scissors beat Paper.");
+            roundResult.textContent = "You lose. Scissors beat Paper.";
             computerScore += 1;
         }
     }
 
     else {
         if (computer === "paper") {
-            console.log("You win! Scissors beat Paper.");
+            roundResult.teexContent = "You win! Scissors beat Paper.";
             humanScore += 1;
         }
         else {
-            console.log("You lose! Rock beats scissors.");
+            roundResult.textContent = "You lose! Rock beats scissors.";
             computerScore += 1;
         }
     }
 
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " + computerScore);
+    result.appendChild(roundResult);
+
+    const score = document.createElement("div");
+    const humanScorePrint = document.createElement("div");
+    humanScorePrint.textContent = "Your score: " + humanScore;
+    score.appendChild(humanScorePrint);
+
+    const compScorePrint = document.createElement("div");
+    compScorePrint.textContent = "Computer score: " + computerScore;
+    score.appendChild(compScorePrint);
+
+    result.appendChild(score);
 }
 
 
