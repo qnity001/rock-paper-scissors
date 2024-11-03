@@ -3,14 +3,12 @@ let computerScore = 0;
 let humanSelection = "";
 let computerSelection = "";
 
-playGame();
-
-function playGame()
-{
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-}
+});
 
 function displayResult() 
 {
