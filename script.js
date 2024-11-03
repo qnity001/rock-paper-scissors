@@ -44,11 +44,9 @@ function getComputerChoice()
     }
 }
 
-
 // Play one round and get output
 function playRound(human, computer)
 {
-    
     console.log("You played " + human);
     console.log("Computer played " + computer);
 
