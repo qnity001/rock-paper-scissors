@@ -111,10 +111,10 @@ function displayResult()
     const yes = document.createElement("div");
 
     if (humanScore == 5) {
-        yes.textContent = "HUMANNNN";
+        yes.textContent = "HUMANNNN FOR THE WIN";
     }
     else {
-        yes.textContent = "COMPUTERRRR";
+        yes.textContent = "COMPUTERRRR FOR THE WIN";
     }
 
     resultText.appendChild(yes);
