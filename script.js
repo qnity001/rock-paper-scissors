@@ -7,6 +7,8 @@ const buttonContainer = document.querySelector(".container");
 const result = document.querySelector(".result");
 const resultText = document.querySelector(".result-text");
 
+const roundResult = document.createElement("div");
+
 getHumanChoice();
 
 // Function to return random choice from Computer
@@ -44,7 +46,7 @@ function playRound(human, computer)
     const compChoice = document.querySelector(".bot-play");
     compChoice.textContent = "Computer played " + computer;
 
-    const roundResult = document.createElement("div");
+    
     
     if (human === computer) {
         roundResult.textContent = "It's a tie!";
