@@ -1,35 +1,17 @@
+// Declaring variables for score
 let humanScore = 0;
 let computerScore = 0;
-let computerSelection = getComputerChoice();
 
-const rock = document.querySelector(".rock");
-rock.addEventListener("click", () => {
-    playRound("rock", computerSelection);
-});
+const result = document.querySelector(".result");
+startGame();
 
-const paper = document.querySelector(".paper");
-paper.addEventListener("click", () => {
-    playRound("paper", computerSelection);
-});
-
-const scissors = document.querySelector(".scissors");
-scissors.addEventListener("click", () => {
-    playRound("scissors", computerSelection);
-});
-
-function displayResult() 
-{
-    if (computerScore > humanScore) {
-        console.log("Computer wins the game!");
-    }
-    else if (humanScore > computerScore) {
-        console.log("You win the game!");
-    }
-    else {
-        console.log("It's a tie!");
-    }
+function startGame() {
+    getHumanChoice();
 }
 
+// Functions
+
+// Function to return random choice from Computer
 function getComputerChoice()
 {
     randomNumber = Math.floor(Math.random() * 3);
@@ -44,11 +26,20 @@ function getComputerChoice()
     }
 }
 
-// Play one round and get output
+// Function to set Event listener for user choice
+function getHumanChoice() {
+    const buttonContainer = document.querySelector(".container"); // Assuming buttons are in a container
+    
+    buttonContainer.addEventListener("click", (event) => {
+        const humanChoice = event.target.textContent.toLowerCase();
+        const computerChoice = getComputerChoice(); 
+        playRound(humanChoice, computerChoice);
+    });
+}
+
+// Function to play one round and display winner for each round
 function playRound(human, computer)
 {
-    const result = document.querySelector(".result");
-
     const humanChoice = document.createElement("div");
     humanChoice.textContent = "You played " + human;
     result.appendChild(humanChoice);
@@ -87,7 +78,7 @@ function playRound(human, computer)
 
     else {
         if (computer === "paper") {
-            roundResult.teexContent = "You win! Scissors beat Paper.";
+            roundResult.textContent = "You win! Scissors beat Paper.";
             humanScore += 1;
         }
         else {
@@ -97,7 +88,13 @@ function playRound(human, computer)
     }
 
     result.appendChild(roundResult);
+    displayScore();
+}
 
+
+
+// Function to display score after each round 
+function displayScore() {
     const score = document.createElement("div");
     const humanScorePrint = document.createElement("div");
     humanScorePrint.textContent = "Your score: " + humanScore;
@@ -110,4 +107,17 @@ function playRound(human, computer)
     result.appendChild(score);
 }
 
+// Function to display final result after 5 rounds
+function displayResult() 
+{
+    if (computerScore > humanScore) {
+        console.log("Computer wins the game!");
+    }
+    else if (humanScore > computerScore) {
+        console.log("You win the game!");
+    }
+    else {
+        console.log("It's a tie!");
+    }
+}
 
