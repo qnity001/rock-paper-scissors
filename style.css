@@ -45,15 +45,50 @@ body {
 
 .button-container {
     display: flex;
-    width: 620px;
+    width: 70%;
+    height: 25vh;
     gap: 20px;
 }
 
-.container,
+.user-container,
 .bot-container {
     background-color: #ffc8dd;
-    height: 200px;
-    width: 300px;
+    height: 100%;
+    width: 50%;
     border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+.container, 
+.contain {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.bot-image,
+.user-image {
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    font-family: 'Fuzzy Bubbles', Arial;
+    padding: 18px;
+    background-color: #cdb4db;
+    border-radius: 50%;
+    border: solid black 1px;
+    flex-shrink: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
