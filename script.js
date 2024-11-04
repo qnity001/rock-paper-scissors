@@ -1,15 +1,13 @@
 // Declaring variables for score
 let humanScore = 0;
 let computerScore = 0;
+let currentRound = 0;
 
+
+const buttonContainer = document.querySelector(".container");
 const result = document.querySelector(".result");
-startGame();
 
-function startGame() {
-    getHumanChoice();
-}
-
-// Functions
+getHumanChoice();
 
 // Function to return random choice from Computer
 function getComputerChoice()
@@ -28,18 +26,24 @@ function getComputerChoice()
 
 // Function to set Event listener for user choice
 function getHumanChoice() {
-    const buttonContainer = document.querySelector(".container"); // Assuming buttons are in a container
-    
-    buttonContainer.addEventListener("click", (event) => {
-        const humanChoice = event.target.textContent.toLowerCase();
+    buttonContainer.addEventListener("click", playGame);
+}
+
+function playGame(event) {
+    const humanChoice = event.target.textContent.toLowerCase();
         const computerChoice = getComputerChoice(); 
         playRound(humanChoice, computerChoice);
-    });
 }
 
 // Function to play one round and display winner for each round
 function playRound(human, computer)
 {
+    if (currentRound == 4) {
+        buttonContainer.removeEventListener("click", playGame);
+        displayResult();
+    }
+    currentRound += 1;
+
     const humanChoice = document.createElement("div");
     humanChoice.textContent = "You played " + human;
     result.appendChild(humanChoice);
