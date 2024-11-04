@@ -3,9 +3,9 @@ let humanScore = 0;
 let computerScore = 0;
 let currentRound = 0;
 
-
 const buttonContainer = document.querySelector(".container");
 const result = document.querySelector(".result");
+const resultText = document.querySelector(".result-text");
 
 getHumanChoice();
 
@@ -31,29 +31,21 @@ function getHumanChoice() {
 
 function playGame(event) {
     const humanChoice = event.target.textContent.toLowerCase();
-        const computerChoice = getComputerChoice(); 
-        playRound(humanChoice, computerChoice);
+    const computerChoice = getComputerChoice(); 
+    playRound(humanChoice, computerChoice);
 }
 
 // Function to play one round and display winner for each round
 function playRound(human, computer)
 {
-    /*if (currentRound == 4) {
-        displayResult();
-        buttonContainer.removeEventListener("click", playGame);
-    }
-    currentRound += 1;*/
-
-    const humanChoice = document.createElement("div");
+    const humanChoice = document.querySelector(".user-play");
     humanChoice.textContent = "You played " + human;
-    result.appendChild(humanChoice);
 
-    const compChoice = document.createElement("div");
+    const compChoice = document.querySelector(".bot-play");
     compChoice.textContent = "Computer played " + computer;
-    result.appendChild(compChoice);
 
     const roundResult = document.createElement("div");
-
+    
     if (human === computer) {
         roundResult.textContent = "It's a tie!";
     }
@@ -91,7 +83,7 @@ function playRound(human, computer)
         }
     }
 
-    result.appendChild(roundResult);
+    resultText.appendChild(roundResult);
     displayScore();
     if (humanScore == 5 || computerScore == 5) {
         buttonContainer.removeEventListener("click", playGame);
@@ -103,16 +95,11 @@ function playRound(human, computer)
 
 // Function to display score after each round 
 function displayScore() {
-    const score = document.createElement("div");
-    const humanScorePrint = document.createElement("div");
+    const humanScorePrint = document.querySelector(".human-score");
     humanScorePrint.textContent = "Your score: " + humanScore;
-    score.appendChild(humanScorePrint);
 
-    const compScorePrint = document.createElement("div");
-    compScorePrint.textContent = "Computer score: " + computerScore;
-    score.appendChild(compScorePrint);
-
-    result.appendChild(score);
+    const compScorePrint = document.querySelector(".computer-score");
+    compScorePrint.textContent = "Bot score: " + computerScore;
 }
 
 
@@ -128,7 +115,7 @@ function displayResult()
         yes.textContent = "COMPUTERRRR";
     }
 
-    result.appendChild(yes);
+    resultText.appendChild(yes);
 }
 
 // Set up button to refresh the page
@@ -136,3 +123,4 @@ const replay = document.querySelector(".replay");
 replay.addEventListener("click", () => {
     location.reload();
 });
+

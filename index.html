@@ -10,33 +10,52 @@
 
 <body>
     
+    
     <div class="header-container">
         <div class="header">
             <div></div>
-            <div class=heading>Rock, Paper, Scissors!</div>
-            <button class="replay">Replay</button>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <div class="user-container">
-            <div class="user-image"><img src="user.png" alt="user" height="70px"></div>
-            <div class="container">
-                <button class="rock-user btn">Rock</button>
-                <button class="paper-user btn">Paper</button>
-                <button class="scissors-user btn">Scissors</button>
+            <div class=heading>Rock, Paper, Scissors! <br> First to 5 wins! </div>
+                <button class="replay">Replay</button>
             </div>
         </div>
 
-        <div class="bot-container">
-            <div class="bot-image"><img src="bot.png" alt="bot" height="70px";></div>
-            <div class="contain">
-                <div class="rock-bot btn">Rock</div>
-                <div class="paper-bot btn">Paper</div>
-                <div class="scissors-bot btn">Scissors</div>
+        <div class="button-container">
+            <div class="USER">
+                <div class="user-container">
+                    <div class="user-image"><img src="user.png" alt="user" height="70px"></div>
+                    <div class="container">
+                        <button class="rock btn">Rock</button>
+                        <button class="paper btn">Paper</button>
+                        <button class="scissors btn">Scissors</button>
+                    </div>
+                </div>
+                <div class="user-play play"></div>
+            </div>
+
+            <div class="USER">
+                <div class="bot-container">
+                    <div class="bot-image"><img src="bot.png" alt="bot" height="70px";></div>
+                    <div class="contain">
+                        <div class="rock-bot btn">Rock</div>
+                        <div class="paper-bot btn">Paper</div>
+                        <div class="scissors-bot btn">Scissors</div>
+                    </div>
+                </div>
+                <div class="bot-play play"></div>
             </div>
         </div>
-    </div>
-    <div class="result"></div>
+        <div class="result">
+            <div class="human-score score">
+                Your Score: 0
+            </div>
+            <div class="computer-score score">
+                Bot Score: 0
+            </div>
+        </div>
+
+        <div class="result-text">
+
+        </div>
+    
 </body>
 </html>

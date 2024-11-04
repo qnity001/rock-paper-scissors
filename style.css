@@ -4,8 +4,9 @@ body {
     background-color: #A2D2FF;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     font-family: 'Fuzzy Bubbles', Arial;
+    gap: 50px;
 }
 
 .header-container {
@@ -13,7 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 9vh;
+    height: 25vh;
     background-color: #bde0fe;
 }
 
@@ -27,6 +28,7 @@ body {
     font-weight: bold;
     color: #6D6875;
     font-size: 3vw;
+    text-align: center;
 }
 
 .replay {
@@ -44,19 +46,28 @@ body {
 }
 
 .button-container {
+    align-self: center;
     display: flex;
     width: 70%;
     height: 25vh;
     gap: 20px;
 }
 
+.USER {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
 .user-container,
 .bot-container {
     background-color: #ffc8dd;
     height: 100%;
-    width: 50%;
+    width: 100%;
     border-radius: 15px;
-
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -79,6 +90,11 @@ body {
     align-items: center;
 }
 
+.play {
+    text-align: center;
+    font-size: 2vw;
+}
+
 .btn {
     display: flex;
     font-family: 'Fuzzy Bubbles', Arial;
@@ -91,4 +107,17 @@ body {
 
 button:hover {
     cursor: pointer;
+}
+
+.result {
+    width: 70%;
+    align-self: center;
+    display: flex;
+}
+
+.score {
+    width: 50%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vw;
 }
