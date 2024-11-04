@@ -38,11 +38,11 @@ function playGame(event) {
 // Function to play one round and display winner for each round
 function playRound(human, computer)
 {
-    if (currentRound == 4) {
-        buttonContainer.removeEventListener("click", playGame);
+    /*if (currentRound == 4) {
         displayResult();
+        buttonContainer.removeEventListener("click", playGame);
     }
-    currentRound += 1;
+    currentRound += 1;*/
 
     const humanChoice = document.createElement("div");
     humanChoice.textContent = "You played " + human;
@@ -93,6 +93,10 @@ function playRound(human, computer)
 
     result.appendChild(roundResult);
     displayScore();
+    if (humanScore == 5 || computerScore == 5) {
+        buttonContainer.removeEventListener("click", playGame);
+        displayResult();
+    }
 }
 
 
@@ -111,17 +115,21 @@ function displayScore() {
     result.appendChild(score);
 }
 
+
 // Function to display final result after 5 rounds
 function displayResult() 
 {
-    if (computerScore > humanScore) {
-        console.log("Computer wins the game!");
-    }
-    else if (humanScore > computerScore) {
-        console.log("You win the game!");
+    const yes = document.createElement("div");
+
+    if (humanScore == 5) {
+        yes.textContent = "HUMANNNN";
     }
     else {
-        console.log("It's a tie!");
+        yes.textContent = "COMPUTERRRR";
     }
+
+    result.appendChild(yes);
 }
+
+
 
