@@ -131,5 +131,8 @@ function displayResult()
     result.appendChild(yes);
 }
 
-
-
+// Set up button to refresh the page
+const replay = document.querySelector(".replay");
+replay.addEventListener("click", () => {
+    location.reload();
+});
