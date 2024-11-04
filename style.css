@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
 body {
     background-color: #A2D2FF;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'Fuzzy Bubbles', Arial;
 }
 
 .header-container {
@@ -15,9 +18,27 @@ body {
 }
 
 .header {
-    width: 70%;
+    width: 80%;
     align-self: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+
+    font-weight: bold;
+    color: #6D6875;
+    font-size: 3vw;
+}
+
+.replay {
+    font-family: 'Fuzzy Bubbles', Arial;
+    background-color: #cdb4db;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.replay:hover {
+    cursor: pointer;
 }
