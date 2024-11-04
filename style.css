@@ -42,3 +42,18 @@ body {
 .replay:hover {
     cursor: pointer;
 }
+
+.button-container {
+    display: flex;
+    width: 620px;
+    gap: 20px;
+}
+
+.container,
+.bot-container {
+    background-color: #ffc8dd;
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+}
+
